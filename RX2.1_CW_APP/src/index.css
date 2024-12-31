@@ -1,68 +1,165 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Import Lato font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Global Styles */
 body {
+  background-color: #1a1a1a;
+  color: #d1d1e0;
+  font-family: "Lato", sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #81a1c1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Form Elements */
+input,
+button {
+  padding: 10px 15px;
+  margin-bottom: 1rem;
+  border: 1px solid #3b4252;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input {
+  background-color: #2e3440;
+  color: #d8dee9;
+}
+
+input:focus {
+  border-color: #81a1c1;
+  outline: none;
+  box-shadow: 0 0 8px rgba(129, 161, 193, 0.5);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #81a1c1;
+  color: #2e3440;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button:hover {
+  background-color: #5e81ac;
+}
+
+/* Navigation */
+nav {
+  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  color: #d1d1e0;
+  font-weight: bold;
+}
+
+nav .links {
+  display: flex;
+}
+
+nav a {
+  color: #d1d1e0;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #81a1c1;
+}
+
+/* Mobile Navigation */
+@media (max-width: 400px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  a:hover {
-    color: #747bff;
+
+  nav .links {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  nav a {
+    margin-left: 1rem;
   }
+}
+
+/* Layout Adjustments for Large Screens */
+@media (min-width: 1024px) {
+  nav {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  footer {
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: #81a1c1;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #81a1c1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #5e81ac;
+}
+
+/* App Container */
+.app {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: left;
+  color: #d1d1e0;
 }
