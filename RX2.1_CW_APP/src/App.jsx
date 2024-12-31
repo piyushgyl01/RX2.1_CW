@@ -9,6 +9,7 @@ function App() {
   const handleClick = (type) => {
     dispatch({ type });
   };
+
   return (
     <>
       <div>
